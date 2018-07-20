@@ -62,7 +62,17 @@
      redis-server /usr/local/redis.x.x.x/9006/redis.conf
      ```
      检测各个节点是否已启动：<br/>
-     ``
+     `ps -el | grep redis`
+     ```
+     5 S     0   401     1  0  80   0 - 36489 ep_pol ?        00:00:09 redis-server
+     5 S     0   462     1  0  80   0 - 36489 ep_pol ?        00:00:09 redis-server
+     5 S     0   485     1  0  80   0 - 36489 ep_pol ?        00:00:10 redis-server
+     5 S     0   523     1  0  80   0 - 36489 ep_pol ?        00:00:09 redis-server
+     5 S     0   615     1  0  80   0 - 36489 ep_pol ?        00:00:09 redis-server
+     5 S     0  1233     1  0  80   0 - 36489 ep_pol ?        00:00:09 redis-server
+     ```
+9. #####安装创建集群所需软件#####
+
 
      
      
