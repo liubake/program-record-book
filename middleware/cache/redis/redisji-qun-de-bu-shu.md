@@ -102,6 +102,15 @@
      [root@localhost /]# curl -sSL https://get.rvm.io | bash -s stable
      [root@localhost /]# source /usr/local/rvm/scripts/rvm
      ```
+     查询当前ruby可用版本：
+     ```
+     [root@localhost /]# rvm list known
+     ```
+     选择其中一个大于等于2.2.2的版本：
+     ```
+     [root@localhost /]# rvm install 2.5.1
+     ```
+     
      
      
 
