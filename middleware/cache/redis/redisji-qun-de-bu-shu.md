@@ -110,6 +110,15 @@
      ```
      [root@localhost /]# rvm install 2.5.1
      ```
+     使用安装的新版本：
+     ```
+     [root@localhost /]# rvm use 2.5.1 --default
+     ```
+     安装其它依赖包：
+     ```
+     [root@localhost /]# yum install rubygems
+     [root@localhost /]# gem install redis
+     ```
      
      
      
