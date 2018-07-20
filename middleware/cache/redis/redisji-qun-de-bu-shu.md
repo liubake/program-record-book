@@ -119,7 +119,11 @@
      [root@localhost /]# yum install rubygems
      [root@localhost /]# gem install redis
      ```
-     
+10. #####创建redis集群#####
+     ```
+     [root@localhost /]# /usr/local/redis-4.0.10/bin/redis-trib.rb create --replicas 1 x.x.x.x:9001 x.x.x.x:9002 x.x.x.x:9003 x.x.x.x:9004 x.x.x.x:9005 x.x.x.x:9006
+     ```
+     > 备注：x.x.x.x 为节点所绑定的IP地址
      
      
 
