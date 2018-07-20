@@ -48,16 +48,21 @@
      cp redis.conf /usr/local/redis.x.x.x/9006
      ```
      修改配置文件，把其中与端口号相关的配置项修改为当前节点的端口号<br/>
-     > 包括以下几项配置：
+     > 注：包括以下4项配置：
      > ```
      > port
      > dir
      > pidfile
      > clustr-conf-file
      > ```
-8. #####启动各个节点#####
-     
-     
+8. #####启动并检测各个节点#####
+     ```
+     redis-server /usr/local/redis.x.x.x/9001/redis.conf
+     ...
+     redis-server /usr/local/redis.x.x.x/9006/redis.conf
+     ```
+     检测各个节点是否已启动：<br/>
+     ``
 
      
      
