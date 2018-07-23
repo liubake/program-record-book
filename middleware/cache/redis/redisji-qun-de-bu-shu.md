@@ -155,6 +155,179 @@
      ```
      > 备注：x.x.x.x 为节点所绑定的IP地址
 12. #####设置开机启动#####
+     创建启动脚本文件：<br/>
+     ```
+     [root@localhost /]# touch /etc/init.d/redisd
+     ```
+     编写启动脚本：<br/>
+     ```
+     #!/bin/sh
+     # chkconfig: 2345 10 90  
+     # description: Start and Stop redis   
+     
+     EXEC=/usr/local/redis-x.x.x/bin/redis-server
+     CLIEXEC=/usr/local/redis-4/bin/redis-cli
+     
+     PIDFILE_9001=/var/run/redis-9001.pid
+     CONF_9001="/usr/local/redis-4.0.10/m1-9001/redis.conf"
+     
+     PIDFILE_9002=/var/run/redis-9002.pid
+     CONF_9002="/usr/local/redis-4.0.10/s1-9002/redis.conf"
+     
+     PIDFILE_9003=/var/run/redis-9003.pid
+     CONF_9003="/usr/local/redis-4.0.10/m2-9003/redis.conf"
+     
+     PIDFILE_9004=/var/run/redis-9004.pid
+     CONF_9004="/usr/local/redis-4.0.10/s2-9004/redis.conf"
+     
+     PIDFILE_9005=/var/run/redis-9005.pid
+     CONF_9005="/usr/local/redis-4.0.10/m3-9005/redis.conf"
+     
+     PIDFILE_9006=/var/run/redis-9006.pid
+     CONF_9006="/usr/local/redis-4.0.10/s3-9006/redis.conf"
+     
+     case "$1" in
+         start)
+             if [ -f $PIDFILE_9001 ]
+             then
+                     echo "$PIDFILE_9001 exists, process is already running or crashed"
+             else
+                     echo "Starting Redis server 9001..."
+                     $EXEC $CONF_9001 &
+             fi
+	     if [ -f $PIDFILE_9002 ]
+             then
+                     echo "$PIDFILE_9002 exists, process is already running or crashed"
+             else
+                     echo "Starting Redis server 9002..."
+                     $EXEC $CONF_9002 &
+             fi
+	     if [ -f $PIDFILE_9003 ]
+             then
+                     echo "$PIDFILE_9003 exists, process is already running or crashed"
+             else
+                     echo "Starting Redis server 9003..."
+                     $EXEC $CONF_9003 &
+             fi
+	     if [ -f $PIDFILE_9004 ]
+             then
+                     echo "$PIDFILE_9004 exists, process is already running or crashed"
+             else
+                     echo "Starting Redis server 9004..."
+                     $EXEC $CONF_9004 &
+             fi
+	     if [ -f $PIDFILE_9001 ]
+             then
+                     echo "$PIDFILE_9005 exists, process is already running or crashed"
+             else
+                     echo "Starting Redis server 9005..."
+                     $EXEC $CONF_9005 &
+             fi
+	     if [ -f $PIDFILE_9001 ]
+             then
+                     echo "$PIDFILE_9006 exists, process is already running or crashed"
+             else
+                     echo "Starting Redis server 9006..."
+                     $EXEC $CONF_9006 &
+             fi
+             ;;
+         stop)
+             if [ ! -f $PIDFILE_9001 ]
+             then
+                     echo "$PIDFILE_9001 does not exist, process is not running"
+             else
+                     PID=$(cat $PIDFILE_9001)
+                     echo "Stopping ..."
+                     $CLIEXEC -p $REDISPORT shutdown
+                     while [ -x /proc/${PID} ]
+                     do
+                         echo "Waiting for Redis server 9001 to shutdown ..."
+                         sleep 1
+                     done
+                     echo "Redis server 9001 stopped"
+             fi
+	     if [ ! -f $PIDFILE_9002 ]
+             then
+                     echo "$PIDFILE_9002 does not exist, process is not running"
+             else
+                     PID=$(cat $PIDFILE_9002)
+                     echo "Stopping ..."
+                     $CLIEXEC -p $REDISPORT shutdown
+                     while [ -x /proc/${PID} ]
+                     do
+                         echo "Waiting for Redis server 9002 to shutdown ..."
+                         sleep 1
+                     done
+                     echo "Redis server 9002 stopped"
+             fi
+	     if [ ! -f $PIDFILE_9003 ]
+             then
+                     echo "$PIDFILE_9003 does not exist, process is not running"
+             else
+                     PID=$(cat $PIDFILE_9003)
+                     echo "Stopping ..."
+                     $CLIEXEC -p $REDISPORT shutdown
+                     while [ -x /proc/${PID} ]
+                     do
+                         echo "Waiting for Redis server 9003 to shutdown ..."
+                         sleep 1
+                     done
+                     echo "Redis server 9003 stopped"
+             fi
+	     if [ ! -f $PIDFILE_9004 ]
+             then
+                     echo "$PIDFILE_9004 does not exist, process is not running"
+             else
+                     PID=$(cat $PIDFILE_9004)
+                     echo "Stopping ..."
+                     $CLIEXEC -p $REDISPORT shutdown
+                     while [ -x /proc/${PID} ]
+                     do
+                         echo "Waiting for Redis server 9004 to shutdown ..."
+                         sleep 1
+                     done
+                     echo "Redis server 9004 stopped"
+             fi
+	     if [ ! -f $PIDFILE_9005 ]
+             then
+                     echo "$PIDFILE_9005 does not exist, process is not running"
+             else
+                     PID=$(cat $PIDFILE_9005)
+                     echo "Stopping ..."
+                     $CLIEXEC -p $REDISPORT shutdown
+                     while [ -x /proc/${PID} ]
+                     do
+                         echo "Waiting for Redis server 9005 to shutdown ..."
+                         sleep 1
+                     done
+                     echo "Redis server 9005 stopped"
+             fi
+	     if [ ! -f $PIDFILE_9006 ]
+             then
+                     echo "$PIDFILE_9006 does not exist, process is not running"
+             else
+                     PID=$(cat $PIDFILE_9006)
+                     echo "Stopping ..."
+                     $CLIEXEC -p $REDISPORT shutdown
+                     while [ -x /proc/${PID} ]
+                     do
+                         echo "Waiting for Redis server 9006 to shutdown ..."
+                         sleep 1
+                     done
+                     echo "Redis server 9006 stopped"
+             fi
+             ;;
+         restart)
+             "$0" stop
+             sleep 3
+             "$0" start
+             ;;
+         *)
+             echo "Please use start or stop or restart as first argument"
+             ;;
+     esac
+     ```
+     > 备注：配置中的 `PIDFILE_xxxx` 为集群对应文件夹 redis.conf 配置文件中的 `pidfile` 配置项的值
 
      
      
