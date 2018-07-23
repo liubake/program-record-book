@@ -166,25 +166,25 @@
      # description: Start and Stop redis   
      
      EXEC=/usr/local/redis-x.x.x/bin/redis-server
-     CLIEXEC=/usr/local/redis-4/bin/redis-cli
+     CLIEXEC=/usr/local/redis-x.x.x/bin/redis-cli
      
      PIDFILE_9001=/var/run/redis-9001.pid
-     CONF_9001="/usr/local/redis-4.0.10/m1-9001/redis.conf"
+     CONF_9001="/usr/local/redis-x.x.x/9001/redis.conf"
      
      PIDFILE_9002=/var/run/redis-9002.pid
-     CONF_9002="/usr/local/redis-4.0.10/s1-9002/redis.conf"
+     CONF_9002="/usr/local/redis-x.x.x/9002/redis.conf"
      
      PIDFILE_9003=/var/run/redis-9003.pid
-     CONF_9003="/usr/local/redis-4.0.10/m2-9003/redis.conf"
+     CONF_9003="/usr/local/redis-x.x.x/9003/redis.conf"
      
      PIDFILE_9004=/var/run/redis-9004.pid
-     CONF_9004="/usr/local/redis-4.0.10/s2-9004/redis.conf"
+     CONF_9004="/usr/local/redis-x.x.x/9004/redis.conf"
      
      PIDFILE_9005=/var/run/redis-9005.pid
-     CONF_9005="/usr/local/redis-4.0.10/m3-9005/redis.conf"
+     CONF_9005="/usr/local/redis-x.x.x/9005/redis.conf"
      
      PIDFILE_9006=/var/run/redis-9006.pid
-     CONF_9006="/usr/local/redis-4.0.10/s3-9006/redis.conf"
+     CONF_9006="/usr/local/redis-x.x.x/9006/redis.conf"
      
      case "$1" in
          start)
@@ -328,6 +328,11 @@
      esac
      ```
      > 备注：配置中的 `PIDFILE_xxxx` 为集群对应文件夹 redis.conf 配置文件中的 `pidfile` 配置项的值
+     
+     设置开机启动：<br/>
+     ```
+     [root@localhost init.d]# chkconfig redisd on
+     ```
 
      
      
