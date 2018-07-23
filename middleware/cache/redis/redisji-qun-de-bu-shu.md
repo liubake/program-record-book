@@ -124,6 +124,36 @@
      [root@localhost /]# /usr/local/redis-4.0.10/bin/redis-trib.rb create --replicas 1 x.x.x.x:9001 x.x.x.x:9002 x.x.x.x:9003 x.x.x.x:9004 x.x.x.x:9005 x.x.x.x:9006
      ```
      > 备注：x.x.x.x 为节点所绑定的IP地址
+11. #####查看集群状态#####
+     ```
+     [root@localhost /]# redis-cli -p -h x.x.x.x -p 9001
+     x.x.x.x:9001>cluster info
+     cluster_state:ok
+     cluster_slots_assigned:16384
+     cluster_slots_ok:16384
+     cluster_slots_pfail:0
+     cluster_slots_fail:0
+     cluster_known_nodes:6
+     cluster_size:3
+     cluster_current_epoch:6
+     cluster_my_epoch:1
+     cluster_stats_messages_ping_sent:3959
+     cluster_stats_messages_pong_sent:1580
+     cluster_stats_messages_fail_sent:6
+     cluster_stats_messages_sent:5545
+     cluster_stats_messages_ping_received:1580
+     cluster_stats_messages_pong_received:1560
+     cluster_stats_messages_fail_received:3
+     cluster_stats_messages_received:3143
+     x.x.x.x:9001>cluster nodes
+     253bfb35a6308f2df66180a1a60e0146a8eb6175 x.x.x.x:9001@19001 myself,master - 0 1532339047000 1 connected 0-5460
+     1157f4871390aff7e4c57afa73c9cd4a74d94ec7 x.x.x.x:9002@19002 master - 0 1532339047000 2 connected 5461-10922
+     dabbebaf4f1c9a8ffe7dbeaa26df6ceca41c6eeb x.x.x.x:9003@19003 master - 0 1532339048000 3 connected 10923-16383
+     929e2eead64e8f7dd1cc22307e0217a8faa071dd x.x.x.x:9005@19005 slave 1157f4871390aff7e4c57afa73c9cd4a74d94ec7 0 1532339045000 5 connected
+     02a47cf383c63ca3a5f92e79bf6dead060e17382 x.x.x.x:9006@19006 slave dabbebaf4f1c9a8ffe7dbeaa26df6ceca41c6eeb 0 1532339047000 6 connected
+     09168b94744b9365929ddd1b9d2c6de49faffcd1 x.x.x.x:9004@19004 slave 253bfb35a6308f2df66180a1a60e0146a8eb6175 0 1532339048211 4 connected
+     ```
+     > 备注：x.x.x.x 为节点所绑定的IP地址
      
      
 
