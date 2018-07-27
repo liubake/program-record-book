@@ -126,7 +126,7 @@
      > 备注：x.x.x.x 为节点所绑定的IP地址
 11. #####查看集群状态#####
      ```
-     [root@localhost /]# redis-cli -p -h x.x.x.x -p 9001
+     [root@localhost /]# redis-cli -c -h x.x.x.x -p 9001
      x.x.x.x:9001>cluster info
      cluster_state:ok
      cluster_slots_assigned:16384
