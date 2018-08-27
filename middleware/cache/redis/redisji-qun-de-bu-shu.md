@@ -45,6 +45,7 @@
      ```
      #本节点的端口号
      port 9001
+     #后台运行
      daemonize yes
      #绑定本机 IP
      bind x.x.x.x
@@ -56,7 +57,10 @@
      cluster-enabled yes
      #9001对应本节点port
      cluster-config-file nodes-9001.conf
+     #节点超时多久则认为它宕机了
      cluster-node-timeout 15000
+     #当其中一个节点（包括主从）都不可用是集群是否不可用，默认是yes集群不可用
+     cluster-require-full-coverage no
      appendonly yes
      ```
 7. #####复制修改后的配置文件到其它集群文件夹#####
