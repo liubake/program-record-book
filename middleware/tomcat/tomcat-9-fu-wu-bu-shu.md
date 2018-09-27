@@ -38,7 +38,7 @@
      export JAVA_HOME=/usr/local/jdk-10.0.2
      export JRE_HOME=/usr/local/jre-10.0.2
      export CATALINA_HOME=/usr/local/tomcat-9.0.12
-     export CATALINA_BASE=/opt/tomcat_instance/example
+     export CATALINA_BASE=/opt/tomcat_instance/example1
      export JVM_OPTIONS="-server -Xms1024m -Xmx16384m -XX:PermSize=128m -XX:MaxPermSize=512m"
 
      sh $CATALINA_HOME/bin/startup.sh
@@ -48,7 +48,7 @@
      export JAVA_HOME=/usr/local/jdk-10.0.2
      export JRE_HOME=/usr/local/jre-10.0.2
      export CATALINA_HOME=/usr/local/tomcat-9.0.12
-     export CATALINA_BASE=/opt/tomcat_instance/tradePE_h5
+     export CATALINA_BASE=/opt/tomcat_instance/example1
      export JVM_OPTIONS="-server -Xms1024m -Xmx16384m -XX:PermSize=128m -XX:MaxPermSize=512m -XX:+UseBiasedLocking"
 
      sh $CATALINA_HOME/bin/shutdown.sh
