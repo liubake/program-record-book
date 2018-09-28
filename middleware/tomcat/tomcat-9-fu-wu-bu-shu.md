@@ -1,15 +1,21 @@
 ####***Tomcat 9 服务部署***####
 
 
-1. #####安装JDK（以JDK10为例）##### 
-     1.1. 下载 jdk10 和 jre10 <br>
-     1.2. 移动到 /usr/local 目录 
-     1.3. 提取文件： 
+1. #####安装JDK（以JDK10为例）#####
+
+     1.1. 下载 jdk10 和 jre10
+     
+     1.2. 移动到 /usr/local 目录
+     
+     1.3. 提取文件：
+      
      ```
      [root@localhost tmp]# tar -zxvf jdk-10.0.2_linux-x64_bin.gz.gz
      [root@localhost tmp]# tar -zxvf jre-10.0.2_linux-x64_bin.gz.gz
      ```
+     
      > 注：在jdk10版本中 jdk 和 jre 是分开的，需要分别下载
+     
 
 2. #####安装Tomcat 9#####
      2.1. 下载 tomcat
