@@ -22,7 +22,17 @@
 
 3. #####删除Tomcat自带的管理后台#####
      3.1. 删除 tomcat 目录中 webapps 目录下的所有文件夹
-     3.2. 确认tomcat 目录中 conf 目录下的 tomcat-users.xml 配置文件内 tomcat-users 节点里面的内容是否都已注释
+     3.2. 确认 tomcat 目录中 conf 目录下的 tomcat-users.xml 配置文件内 tomcat-users 节点里面的内容是否都已注释
+     
+4. #####修改Tomcat关闭脚本配置#####
+     4.1. 修改 tomcat 目录中 bin 目录下的 shutdown.sh 配置文件，使其支持强制关闭，把
+     ```
+     exec "$PRGDIR"/"$EXECUTABLE" stop "$@"
+     ```
+     修改为：
+     ```
+     exec "$PRGDIR"/"$EXECUTABLE" stop -force "$@"
+     ```
 
 4. #####Tomcat单机多实例部署#####
      4.1. 在 opt 目录下创建 tomcat_instance 目录
