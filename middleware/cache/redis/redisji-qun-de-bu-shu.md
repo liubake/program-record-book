@@ -173,21 +173,27 @@
      CLIEXEC=/usr/local/redis-x.x.x/bin/redis-cli
      
      PIDFILE_9001=/var/run/redis-9001.pid
+     PORT_9001=9001
      CONF_9001="/usr/local/redis-x.x.x/9001/redis.conf"
      
      PIDFILE_9002=/var/run/redis-9002.pid
+     PORT_9002=9002
      CONF_9002="/usr/local/redis-x.x.x/9002/redis.conf"
      
      PIDFILE_9003=/var/run/redis-9003.pid
+     PORT_9003=9003
      CONF_9003="/usr/local/redis-x.x.x/9003/redis.conf"
      
      PIDFILE_9004=/var/run/redis-9004.pid
+     PORT_9004=9004
      CONF_9004="/usr/local/redis-x.x.x/9004/redis.conf"
      
      PIDFILE_9005=/var/run/redis-9005.pid
+     PORT_9005=9005
      CONF_9005="/usr/local/redis-x.x.x/9005/redis.conf"
      
      PIDFILE_9006=/var/run/redis-9006.pid
+     PORT_9006=9006
      CONF_9006="/usr/local/redis-x.x.x/9006/redis.conf"
      
      case "$1" in
@@ -242,7 +248,7 @@
              else
                      PID=$(cat $PIDFILE_9001)
                      echo "Stopping ..."
-                     $CLIEXEC -p $REDISPORT shutdown
+                     $CLIEXEC -p $PORT_9001 shutdown
                      while [ -x /proc/${PID} ]
                      do
                          echo "Waiting for Redis server 9001 to shutdown ..."
@@ -256,7 +262,7 @@
              else
                      PID=$(cat $PIDFILE_9002)
                      echo "Stopping ..."
-                     $CLIEXEC -p $REDISPORT shutdown
+                     $CLIEXEC -p $PORT_9002 shutdown
                      while [ -x /proc/${PID} ]
                      do
                          echo "Waiting for Redis server 9002 to shutdown ..."
@@ -270,7 +276,7 @@
              else
                      PID=$(cat $PIDFILE_9003)
                      echo "Stopping ..."
-                     $CLIEXEC -p $REDISPORT shutdown
+                     $CLIEXEC -p $PORT_9003 shutdown
                      while [ -x /proc/${PID} ]
                      do
                          echo "Waiting for Redis server 9003 to shutdown ..."
