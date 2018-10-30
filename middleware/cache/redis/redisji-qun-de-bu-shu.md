@@ -290,7 +290,7 @@
              else
                      PID=$(cat $PIDFILE_9004)
                      echo "Stopping ..."
-                     $CLIEXEC -p $REDISPORT shutdown
+                     $CLIEXEC -p $PORT_9004 shutdown
                      while [ -x /proc/${PID} ]
                      do
                          echo "Waiting for Redis server 9004 to shutdown ..."
@@ -304,7 +304,7 @@
              else
                      PID=$(cat $PIDFILE_9005)
                      echo "Stopping ..."
-                     $CLIEXEC -p $REDISPORT shutdown
+                     $CLIEXEC -p $PORT_9005 shutdown
                      while [ -x /proc/${PID} ]
                      do
                          echo "Waiting for Redis server 9005 to shutdown ..."
@@ -318,7 +318,7 @@
              else
                      PID=$(cat $PIDFILE_9006)
                      echo "Stopping ..."
-                     $CLIEXEC -p $REDISPORT shutdown
+                     $CLIEXEC -p $PORT_9006 shutdown
                      while [ -x /proc/${PID} ]
                      do
                          echo "Waiting for Redis server 9006 to shutdown ..."
