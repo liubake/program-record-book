@@ -75,7 +75,7 @@
      export JRE_HOME=/usr/local/jre-10.0.2
      export CATALINA_HOME=/usr/local/tomcat-9.0.12
      export CATALINA_BASE=/opt/tomcat_instance/example1
-     export CATALINA_PID=//opt/tomcat_instance/example1/tomcat.pid
+     export CATALINA_PID=/opt/tomcat_instance/example1/tomcat.pid
      export JVM_OPTIONS="-server -Xms1024m -Xmx16384m -XX:PermSize=128m -XX:MaxPermSize=512m -XX:+UseBiasedLocking -Dfile.encoding=UTF-8"
 
      sh $CATALINA_HOME/bin/startup.sh
@@ -88,7 +88,7 @@
      export JRE_HOME=/usr/local/jre-10.0.2
      export CATALINA_HOME=/usr/local/tomcat-9.0.12
      export CATALINA_BASE=/opt/tomcat_instance/example1
-     export CATALINA_PID=//opt/tomcat_instance/example1/tomcat.pid
+     export CATALINA_PID=/opt/tomcat_instance/example1/tomcat.pid
      export JVM_OPTIONS="-server -Xms1024m -Xmx16384m -XX:PermSize=128m -XX:MaxPermSize=512m -XX:+UseBiasedLocking -Dfile.encoding=UTF-8"
 
      sh $CATALINA_HOME/bin/shutdown.sh
