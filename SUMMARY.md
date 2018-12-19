@@ -19,6 +19,7 @@
       * [Tomcat 9 服务部署](middleware/tomcat/tomcat-9-fu-wu-bu-shu.md)
   * [Distributed](middleware/distributed.md)
     * [Zookeeper](middleware/distributed/zookeeper.md)
+      * [Zookeeper伪集群的部署](middleware/distributed/zookeeper/zookeeperwei-ji-qun-de-bu-shu.md)
 * [OperatingSystem](operatingsystem.md)
   * [Linux](operatingsystem/linux.md)
     * [CentOS](operatingsystem/linux/centos.md)
