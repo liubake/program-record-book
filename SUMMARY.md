@@ -18,7 +18,7 @@
     * [Tomcat](middleware/tomcat.md)
       * [Tomcat 9 服务部署](middleware/tomcat/tomcat-9-fu-wu-bu-shu.md)
   * [Distributed](middleware/distributed.md)
-    * Zookeeper
+    * [Zookeeper](middleware/distributed/zookeeper.md)
 * [OperatingSystem](operatingsystem.md)
   * [Linux](operatingsystem/linux.md)
     * [CentOS](operatingsystem/linux/centos.md)
