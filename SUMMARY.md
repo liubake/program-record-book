@@ -9,7 +9,7 @@
 * [Middleware](middleware.md)
   * [Cache](middleware/cache.md)
     * [Redis](middleware/cache/redis.md)
-      * [Redis集群的部署](middleware/cache/redis/redisji-qun-de-bu-shu.md)
+      * [Redis伪集群的部署](middleware/cache/redis/redisji-qun-de-bu-shu.md)
   * [Database](middleware/database.md)
     * [MySql](middleware/database/mysql.md)
   * [Maven](middleware/maven.md)
@@ -17,6 +17,9 @@
   * Server
     * [Tomcat](middleware/tomcat.md)
       * [Tomcat 9 服务部署](middleware/tomcat/tomcat-9-fu-wu-bu-shu.md)
+  * Distributed
+    * Zookeeper
 * [OperatingSystem](operatingsystem.md)
   * [Linux](operatingsystem/linux.md)
+    * [CentOS](operatingsystem/linux/centos.md)
 
