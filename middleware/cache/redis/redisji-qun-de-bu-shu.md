@@ -333,11 +333,16 @@
              "$0" start
              ;;
          *)
-             echo "Please use start or stop or restart as first argument"
-             ;;
+         echo "Please use start or stop or restart as first argument"
+         ;;
      esac
      ```
      > 备注：配置中的 `PIDFILE_xxxx` 为集群对应文件夹 redis.conf 配置文件中的 `pidfile` 配置项的值
+     
+     设置执行权限：<br/>
+     ```
+     [root@localhost init.d]# chmod a+x redisd
+     ```
      
      设置开机启动：<br/>
      ```
