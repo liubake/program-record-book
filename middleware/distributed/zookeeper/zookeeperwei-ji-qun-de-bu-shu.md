@@ -13,14 +13,17 @@
      [root@localhost tmp]# cp zookeeper-x.x.x /usr/local/zookeeper-x.x.x
      ```
 4. #####创建集群文件夹#####
-     转到opt目录：
+     转到opt目录：<br/>
      ```
-     [root@localhost redis.x.x.x]# cd /opt
+     [root@localhost tmp]# cd /opt
      ```
-     创建主目录：
-     
-     创建实例目录：
-     
+     创建主目录：<br/>
+     ```
+     [root@localhost opt]# mkdir zookeeper
+     ```
+     创建实例目录：<br/>
+     ```
+     ```
      
      创建 9001~9006 集群文件夹：
      ```
