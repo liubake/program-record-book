@@ -28,47 +28,44 @@
      [root@localhost zookeeper]# mkdir instance_2388
      [root@localhost zookeeper]# mkdir instance_2389
      ```
+5. #####设置实例配置#####  
+     转到实例目录：<br/>
+     ```
+     [root@localhost zookeeper]# cd instance_2387
+     ```
+     创建数据和日志文件夹：<br/>
+     ```
+     [root@localhost instance_2387]# mkdir log
+     [root@localhost instance_2387]# mkdir data
+     ```
+     创建对应实例的myid文件：<br/>
+     ```
+     [root@localhost instance_2387]# cd data
+     [root@localhost data]# echo "1" > myid
+     ```
+     创建对应实例的配置文件：<br/>
+     ```
+     [root@localhost data]# cd ..
+     [root@localhost instance_2387]# touch zoo.cfg
+     [root@localhost instance_2387]# vi zoo.cfg
+     ```
+     添加配置文件内容：<br/>
+     ```
+     tickTime=2000
+     initLimit=10
+     syncLimit=5
+     clientPort=2387
+     autopurge.purgeInterval=24
+     autopurge.snapRetainCount=500
+     dataDir=/opt/zookeeper/instance_2387/data
+     dataLogDir=/opt/zookeeper/instance_2387/log
+     server.1=127.0.0.1:2587:3587
+     server.2=127.0.0.1:2588:3588
+     server.3=127.0.0.1:2589:3589
+     ```
+     创建其它两个实例的文件夹及配置项目。<br/>
      
-     创建 9001~9006 集群文件夹：
-     ```
-     [root@localhost redis.x.x.x]# mkdir -p 9001/data 9002/data 9003/data 9004/data 9005/data 9006/data
-     ```
-5. #####复制Redis配置文件#####
-     把提取的安装包文件夹中的 `redis.conf` 配置文件复制到刚才创建的集群文件夹中：
-     ```
-     [root@localhost redis.x.x.x]# cp /tmp/redis.x.x.x/redis.conf /usr/local/redis.x.x.x/9001
-     ```
-6. #####修改Redis配置文件#####
-     转到集群文件夹：
-     ```
-     [root@localhost redis.x.x.x]# cd 9001
-     ```
-     编辑配置文件：
-     ```
-     [root@localhost 9001]# vi redis.conf
-     ```
-     修改配置文件以下配置项：
-     ```
-     #本节点的端口号
-     port 9001
-     #后台运行
-     daemonize yes
-     #绑定本机 IP
-     bind x.x.x.x
-     #数据文件存放位置
-     dir /usr/local/redis.x.x.x/9001/data/
-     #9001对应本节点port
-     pidfile /var/run/redis-9001.pid
-     #启动集群模式
-     cluster-enabled yes
-     #9001对应本节点port
-     cluster-config-file nodes-9001.conf
-     #节点超时多久则认为它宕机了
-     cluster-node-timeout 15000
-     #当其中一个节点（包括主从）都不可用是集群是否不可用，默认是yes集群不可用
-     cluster-require-full-coverage no
-     appendonly yes
-     ```
+     > 备注：myid中对应的值，与当前实例 server.x 值一致，不同实例之间的的配置需要进行区分。
 
 12. #####设置开机启动#####
      创建启动脚本文件：<br/>
