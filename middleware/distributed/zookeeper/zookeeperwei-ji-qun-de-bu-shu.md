@@ -5,24 +5,23 @@
      [下载地址](https://www.apache.org/dyn/closer.cgi)
 2. #####提取安装包#####
      ```
-     [root@localhost tmp]# tar -zxvf zookeeper.x.x.x.tar.gz
+     [root@localhost tmp]# tar -zxvf zookeeper-x.x.x.tar.gz
      ```
-3. #####编译并安装#####
-     创建安装目录：<br/>
+3. #####复制到安装目录#####
+     复制到安装目录：<br/>
      ```
-     [root@localhost tmp]# mkdir /usr/local/redis.x.x.x
+     [root@localhost tmp]# cp zookeeper-x.x.x /usr/local/zookeeper-x.x.x
      ```
-     转到提取目录：
-     ```
-     [root@localhost redis.x.x.x]# make
-     [root@localhost redis.x.x.x]# make PERFIX=/usr/local/redis.x.x.x/bin install
-     ```
-     > 注： `PERFIX` 指定要安装到的目录，不指定则默认安装到 `/usr/local/bin`
 4. #####创建集群文件夹#####
-     转到安装目录：
+     转到opt目录：
      ```
-     [root@localhost redis.x.x.x]# cd /usr/local/redis.x.x.x
+     [root@localhost redis.x.x.x]# cd /opt
      ```
+     创建主目录：
+     
+     创建实例目录：
+     
+     
      创建 9001~9006 集群文件夹：
      ```
      [root@localhost redis.x.x.x]# mkdir -p 9001/data 9002/data 9003/data 9004/data 9005/data 9006/data

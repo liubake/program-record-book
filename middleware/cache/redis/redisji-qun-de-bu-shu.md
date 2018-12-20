@@ -12,36 +12,36 @@
      ```
      [root@localhost tmp]# mkdir /usr/local/redis.x.x.x
      ```
-     转到提取目录：
+     转到提取目录：<br/>
      ```
      [root@localhost redis.x.x.x]# make
      [root@localhost redis.x.x.x]# make PERFIX=/usr/local/redis.x.x.x/bin install
      ```
      > 注： `PERFIX` 指定要安装到的目录，不指定则默认安装到 `/usr/local/bin`
 4. #####创建集群文件夹#####
-     转到安装目录：
+     转到安装目录：<br/>
      ```
      [root@localhost redis.x.x.x]# cd /usr/local/redis.x.x.x
      ```
-     创建 9001~9006 集群文件夹：
+     创建 9001~9006 集群文件夹：<br/>
      ```
      [root@localhost redis.x.x.x]# mkdir -p 9001/data 9002/data 9003/data 9004/data 9005/data 9006/data
      ```
 5. #####复制Redis配置文件#####
-     把提取的安装包文件夹中的 `redis.conf` 配置文件复制到刚才创建的集群文件夹中：
+     把提取的安装包文件夹中的 `redis.conf` 配置文件复制到刚才创建的集群文件夹中：<br/>
      ```
      [root@localhost redis.x.x.x]# cp /tmp/redis.x.x.x/redis.conf /usr/local/redis.x.x.x/9001
      ```
 6. #####修改Redis配置文件#####
-     转到集群文件夹：
+     转到集群文件夹：<br/>
      ```
      [root@localhost redis.x.x.x]# cd 9001
      ```
-     编辑配置文件：
+     编辑配置文件：<br/>
      ```
      [root@localhost 9001]# vi redis.conf
      ```
-     修改配置文件以下配置项：
+     修改配置文件以下配置项：<br/>
      ```
      #本节点的端口号
      port 9001
@@ -83,7 +83,7 @@
      ...
      [root@localhost /]# redis-server /usr/local/redis.x.x.x/9006/redis.conf
      ```
-     检测各个节点是否已启动：
+     检测各个节点是否已启动：<br/>
      ```
      [root@localhost /]# ps -el | grep redis
      ```
@@ -96,29 +96,29 @@
      5 S     0  1233     1  0  80   0 - 36489 ep_pol ?        00:00:09 redis-server
      ```
 9. #####安装创建集群所需软件#####
-     查询系统ruby版本：
+     查询系统ruby版本：<br/>
      ```
      [root@localhost /]# ruby -v
      ```
-     如果没有安装或者ruby版本小于2.2.2，安装新版本：
+     如果没有安装或者ruby版本小于2.2.2，安装新版本：<br/>
      ```
      [root@localhost /]# gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
      [root@localhost /]# curl -sSL https://get.rvm.io | bash -s stable
      [root@localhost /]# source /usr/local/rvm/scripts/rvm
      ```
-     查询当前ruby可用版本：
+     查询当前ruby可用版本：<br/>
      ```
      [root@localhost /]# rvm list known
      ```
-     选择其中一个大于等于2.2.2的版本：
+     选择其中一个大于等于2.2.2的版本：<br/>
      ```
      [root@localhost /]# rvm install 2.5.1
      ```
-     使用安装的新版本：
+     使用安装的新版本：<br/>
      ```
      [root@localhost /]# rvm use 2.5.1 --default
      ```
-     安装其它依赖包：
+     安装其它依赖包：<br/>
      ```
      [root@localhost /]# yum install rubygems
      [root@localhost /]# gem install redis
