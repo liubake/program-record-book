@@ -20,7 +20,9 @@
   * [Distributed](middleware/distributed.md)
     * [Zookeeper](middleware/distributed/zookeeper.md)
       * [Zookeeper伪集群的部署](middleware/distributed/zookeeper/zookeeperwei-ji-qun-de-bu-shu.md)
-  * MQ
+  * [MQ](middleware/mq.md)
+    * Kafka
+      * Kafka伪集群的部署
 * [OperatingSystem](operatingsystem.md)
   * [Linux](operatingsystem/linux.md)
     * [CentOS](operatingsystem/linux/centos.md)
