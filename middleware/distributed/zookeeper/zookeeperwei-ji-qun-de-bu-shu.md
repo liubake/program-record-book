@@ -24,9 +24,9 @@
      创建实例目录：<br/>
      ```
      [root@localhost opt]# cd zookeeper
-     [root@localhost zookeeper]# cd zookeeper
-     [root@localhost zookeeper]# cd zookeeper
-     [root@localhost zookeeper]# cd zookeeper
+     [root@localhost zookeeper]# mkdir instance_2387
+     [root@localhost zookeeper]# mkdir instance_2388
+     [root@localhost zookeeper]# mkdir instance_2389
      ```
      
      创建 9001~9006 集群文件夹：
