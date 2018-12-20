@@ -2,10 +2,10 @@
 
 
 1. #####下载安装包#####
-     [下载地址](https://redis.io/download)
+     [下载地址](https://www.apache.org/dyn/closer.cgi)
 2. #####提取安装包#####
      ```
-     [root@localhost tmp]# tar -zxvf redis.x.x.x.tar.gz
+     [root@localhost tmp]# tar -zxvf zookeeper.x.x.x.tar.gz
      ```
 3. #####编译并安装#####
      创建安装目录：<br/>
