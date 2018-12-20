@@ -23,6 +23,10 @@
      ```
      创建实例目录：<br/>
      ```
+     [root@localhost opt]# cd zookeeper
+     [root@localhost zookeeper]# cd zookeeper
+     [root@localhost zookeeper]# cd zookeeper
+     [root@localhost zookeeper]# cd zookeeper
      ```
      
      创建 9001~9006 集群文件夹：
