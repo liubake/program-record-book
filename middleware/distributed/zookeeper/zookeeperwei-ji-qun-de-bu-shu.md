@@ -1,17 +1,17 @@
 ####***Zookeeper伪集群搭建***####
 
 
-1. #####下载安装包#####
+1. #####下载安装包##### <br/>
      [下载地址](https://www.apache.org/dyn/closer.cgi)
-2. #####提取安装包#####
+2. #####提取安装包##### <br/>
      ```
      [root@localhost tmp]# tar -zxvf zookeeper-x.x.x.tar.gz
      ```
-3. #####复制到安装目录#####
+3. #####复制到安装目录##### <br/>
      ```
      [root@localhost tmp]# cp zookeeper-x.x.x /usr/local/zookeeper-x.x.x
      ```
-4. #####创建集群文件夹#####
+4. #####创建集群文件夹##### <br/>
      转到opt目录：<br/>
      ```
      [root@localhost tmp]# cd /opt
@@ -27,7 +27,7 @@
      [root@localhost zookeeper]# mkdir instance_2388
      [root@localhost zookeeper]# mkdir instance_2389
      ```
-5. #####设置实例配置#####  
+5. #####设置实例配置##### <br/> 
      转到实例目录：<br/>
      ```
      [root@localhost zookeeper]# cd instance_2387
@@ -66,7 +66,7 @@
      
      > 备注：myid中对应的值，与当前实例 server.x 值一致，不同实例之间的的配置需要进行区分。
 
-12. #####设置开机启动#####
+12. #####设置开机启动##### <br/>
      创建启动脚本文件：<br/>
      ```
      [root@localhost /]# touch /etc/init.d/zookeeperd
