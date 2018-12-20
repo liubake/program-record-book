@@ -348,14 +348,4 @@
      ```
      [root@localhost init.d]# chkconfig redisd on
      ```
-
      
-     
-
-     
-     
-     
-
-     
-    
-
