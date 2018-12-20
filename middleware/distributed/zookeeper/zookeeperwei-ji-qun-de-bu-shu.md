@@ -8,7 +8,6 @@
      [root@localhost tmp]# tar -zxvf zookeeper-x.x.x.tar.gz
      ```
 3. #####复制到安装目录#####
-     复制到安装目录：<br/>
      ```
      [root@localhost tmp]# cp zookeeper-x.x.x /usr/local/zookeeper-x.x.x
      ```
