@@ -63,28 +63,59 @@
      server.2=127.0.0.1:2588:3588
      server.3=127.0.0.1:2589:3589
      ```
-     创建其它两个实例的文件夹及配置项目。<br/>
+     创建其它两个实例的文件夹及配置项目...<br/>
      
      > 备注：myid中对应的值，与当前实例 server.x 值一致，不同实例之间的的配置需要进行区分。
 
 12. #####设置开机启动#####
      创建启动脚本文件：<br/>
      ```
-     [root@localhost /]# touch /etc/init.d/redisd
+     [root@localhost /]# touch /etc/init.d/zookeeperd
      ```
      编写启动脚本：<br/>
      ```
+     #!/bin/sh
+     # chkconfig: 2345 10 90
+     # description: Start and Stop zookeeper
      
+     export JAVA_HOME=/usr/local/openjdk-11.0.1
+     EXEC=/usr/local/zookeeper-3.4.13/bin/zkServer.sh
+     INSTANCE_2387=/opt/zookeeper/instance_2387/zoo.cfg
+     INSTANCE_2388=/opt/zookeeper/instance_2388/zoo.cfg
+     INSTANCE_2389=/opt/zookeeper/instance_2389/zoo.cfg
+     
+     case "$1" in
+         start)
+             $EXEC start $INSTANCE_2387
+             $EXEC start $INSTANCE_2388
+             $EXEC start $INSTANCE_2389
+         ;;
+         stop)
+             $EXEC stop $INSTANCE_2387
+             $EXEC stop $INSTANCE_2388
+             $EXEC stop $INSTANCE_2389
+         ;;
+         status)
+             $EXEC status $INSTANCE_2387
+             $EXEC status $INSTANCE_2388
+             $EXEC status $INSTANCE_2389
+         ;;
+         restart)
+             $EXEC restart $INSTANCE_2387
+             $EXEC restart $INSTANCE_2388
+             $EXEC restart $INSTANCE_2389
+         ;;
+         *) echo "require start|stop|status|restart" 
+         ;;
+     esac
      ```
-     > 备注：配置中的 `PIDFILE_xxxx` 为集群对应文件夹 redis.conf 配置文件中的 `pidfile` 配置项的值
-     
      设置执行权限：<br/>
      ```
-     [root@localhost init.d]# chmod a+x redisd
+     [root@localhost init.d]# chmod a+x zookeeperd
      ```
      
      设置开机启动：<br/>
      ```
-     [root@localhost init.d]# chkconfig redisd on
+     [root@localhost init.d]# chkconfig zookeeperd on
      ```
      
