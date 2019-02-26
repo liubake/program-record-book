@@ -22,7 +22,7 @@
       * [Zookeeper伪集群的部署](middleware/distributed/zookeeper/zookeeperwei-ji-qun-de-bu-shu.md)
   * [MQ](middleware/mq.md)
     * Kafka
-      * Kafka伪集群的部署
+      * [Kafka伪集群的部署](middleware/mq/kafkawei-ji-qun-de-bu-shu.md)
 * [OperatingSystem](operatingsystem.md)
   * [Linux](operatingsystem/linux.md)
     * [CentOS](operatingsystem/linux/centos.md)
