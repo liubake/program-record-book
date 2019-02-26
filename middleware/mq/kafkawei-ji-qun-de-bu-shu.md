@@ -3,15 +3,17 @@
 
 1. #####下载安装包#####
 
-
+     [下载地址](http://kafka.apache.org/downloads)
      
 2. #####提取安装包#####
 
-
+     ```
+     [root@localhost tmp]# tar -zxvf kafka_2.12-2.1.0.tgz
+     ```
      
 3. #####复制到安装目录#####
 
-
+     
      
 4. #####创建集群文件夹#####
 
