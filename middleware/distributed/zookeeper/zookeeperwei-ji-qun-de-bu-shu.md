@@ -123,3 +123,15 @@
      [root@localhost init.d]# chkconfig zookeeperd on
      ```
      
+     启动服务：<br/>
+     ```
+     [root@localhost init.d]# ./zookeeperd start
+
+     ```
+     
+     查询集群状态：<br/>
+     ```
+     [root@localhost init.d]# ./zookeeperd status
+
+     ```
+     
