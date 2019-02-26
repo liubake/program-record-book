@@ -64,7 +64,12 @@
      ```
      创建其它两个实例的文件夹及配置项目...<br/>
      
-     > 备注：myid中对应的值，与当前实例 server.x 值一致，不同实例之间的的配置需要进行区分。
+     > 备注：
+     > &emsp;`clientPort` : 客户端连接zookeeper服务的端口
+     > &emsp;`server.[myid]=[ip]:[port1]:[port2]` :
+     > &emsp;&emsp;myid 中对应的值，与当前实例 server.[myid] 值一致，不同实例之间的的配置需要进行区分。
+     > &emsp;&emsp;port1 : 表示的是服务实例与集群中的Leader服务器交换信息的端口。
+     > &emsp;&emsp;port2 : 表示的是万一集群中的Leader服务器宕机了，需要一个端口来重新进行宣讲，选出一个新的Leader。
 
 12. #####设置开机启动##### <br/>
      创建启动脚本文件：<br/>
