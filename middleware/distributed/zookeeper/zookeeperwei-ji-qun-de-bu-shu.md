@@ -1,17 +1,24 @@
 ####***Zookeeper伪集群搭建***####
 
 
-1. #####下载安装包##### <br/>
+1. #####下载安装包#####
+
      [下载地址](https://www.apache.org/dyn/closer.cgi)
-2. #####提取安装包##### <br/>
+     
+2. #####提取安装包#####
+
      ```
      [root@localhost tmp]# tar -zxvf zookeeper-x.x.x.tar.gz
      ```
-3. #####复制到安装目录##### <br/>
+     
+3. #####复制到安装目录#####
+
      ```
      [root@localhost tmp]# cp zookeeper-x.x.x /usr/local/zookeeper-x.x.x
      ```
-4. #####创建集群文件夹##### <br/>
+     
+4. #####创建集群文件夹#####
+
      转到opt目录：<br/>
      ```
      [root@localhost tmp]# cd /opt
@@ -27,7 +34,9 @@
      [root@localhost zookeeper]# mkdir instance_2388
      [root@localhost zookeeper]# mkdir instance_2389
      ```
-5. #####设置实例配置##### <br/> 
+     
+5. #####设置实例配置#####
+
      转到实例目录：<br/>
      ```
      [root@localhost zookeeper]# cd instance_2387
@@ -71,7 +80,8 @@
      > &emsp;&emsp;port1 : 表示的是服务实例与集群中的Leader服务器交换信息的端口。
      > &emsp;&emsp;port2 : 表示的是万一集群中的Leader服务器宕机了，需要一个端口来重新进行宣讲，选出一个新的Leader。
 
-12. #####设置开机启动##### <br/>
+6. #####设置开机启动#####
+
      创建启动脚本文件：<br/>
      ```
      [root@localhost /]# touch /etc/init.d/zookeeperd
@@ -123,13 +133,15 @@
      [root@localhost init.d]# chkconfig zookeeperd on
      ```
      
-     启动服务：<br/>
+7. #####启动服务：#####
+
      ```
      [root@localhost init.d]# ./zookeeperd start
 
      ```
      
-     查询集群状态：<br/>
+8. #####查询集群状态：#####
+
      ```
      [root@localhost init.d]# ./zookeeperd status
 
